@@ -26,8 +26,8 @@ class InterviewEngineTest {
 
         List<Integer> days = session.getTargetDays();
         assertTrue(days.size() >= 4, "need at least 4 target days");
-        assertEquals(8, days.get(0), "skipped mission (day 8) should be the first probe target");
-        assertTrue(days.containsAll(List.of(8, 15, 5)), "all weak spots should be selected");
+        assertEquals(9, days.get(0), "skipped mission (day 9) should be the first probe target");
+        assertTrue(days.containsAll(List.of(9, 23, 6)), "all weak spots should be selected");
         assertEquals(days.size(), days.stream().distinct().count(), "no duplicate target days");
     }
 
@@ -54,7 +54,7 @@ class InterviewEngineTest {
         assertEquals(InterviewSession.PHASE_INTERVIEWING, session.getPhase());
         assertEquals(1, session.getHistory().size());
         assertFalse(response.done());
-        assertTrue(claude.systemPrompts.get(0).contains("Agents"));
+        assertTrue(claude.systemPrompts.get(0).contains("Probability foundations"));
     }
 
     @Test

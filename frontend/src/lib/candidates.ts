@@ -1,45 +1,50 @@
 import type { Candidate } from './types'
 
 /**
- * Hardcoded candidate pool, matching the candidates.json shape
- * (see docs/00_SHARED_CONTEXT.md §6). The backend will eventually serve
- * candidates; for now the picker chooses among these. Each candidate's
- * weak spots (skipped missions / high-attempt missions) drive what the
- * interviewer probes.
+ * Candidate pool, mirroring backend/src/main/resources/candidates.json
+ * (member/missions/signals shape — the frontend omits id/name, which the
+ * backend's Candidate record drops on deserialization). Each candidate's weak
+ * spots (skipped missions / high-attempt, unpassed missions) drive what the
+ * interviewer probes. Day numbers and titles reference the real AI Cohort
+ * curriculum (backend/src/main/resources/curriculum.json), so the questions
+ * the engine asks line up with the weak spots the UI advertises.
  */
 export const CANDIDATES: Candidate[] = [
   {
-    member: { role: 'AI Engineer', experience: 2 },
+    member: { role: 'AI Engineer Trainee', experience: 1 },
     missions: [
-      { day: 2, title: 'Day 2 - Prompting Basics', passed: true, attempts: 1 },
-      { day: 5, title: 'Day 5 - RAG Fundamentals', passed: false, attempts: 3 },
-      { day: 8, title: 'Day 8 - Agents', skipped: true },
-      { day: 12, title: 'Day 12 - Evaluation', passed: true, attempts: 1 },
-      { day: 15, title: 'Day 15 - Fine-tuning', passed: false, attempts: 4 },
+      { day: 3, title: 'Python data structures', passed: true, attempts: 1 },
+      { day: 6, title: 'Pandas basics', passed: false, attempts: 4 },
+      { day: 9, title: 'Probability foundations', skipped: true },
+      { day: 14, title: 'Classification', passed: true, attempts: 2 },
+      { day: 18, title: 'Backpropagation and training', passed: true, attempts: 3 },
+      { day: 23, title: 'Transformers and attention', skipped: true },
+      { day: 27, title: 'Prompt engineering', passed: true, attempts: 1 },
     ],
-    signals: { commitDays: 10, missionsCompleted: 3, missionsFirstTry: 2 },
+    signals: { commitDays: 21, missionsCompleted: 15, missionsFirstTry: 9 },
   },
   {
-    member: { role: 'Web Developer', experience: 1 },
+    member: { role: 'Data Analyst', experience: 2 },
     missions: [
-      { day: 1, title: 'Day 1 - HTML & CSS', passed: true, attempts: 1 },
-      { day: 3, title: 'Day 3 - JavaScript', passed: true, attempts: 2 },
-      { day: 6, title: 'Day 6 - Accessibility', skipped: true },
-      { day: 9, title: 'Day 9 - Performance', passed: false, attempts: 3 },
-      { day: 14, title: 'Day 14 - Testing', skipped: true },
+      { day: 6, title: 'Pandas basics', passed: true, attempts: 1 },
+      { day: 11, title: 'Hypothesis testing', passed: false, attempts: 5 },
+      { day: 16, title: 'ML model project', passed: true, attempts: 2 },
+      { day: 19, title: 'Building a neural network', skipped: true },
+      { day: 24, title: 'Working with LLMs', passed: true, attempts: 2 },
     ],
-    signals: { commitDays: 6, missionsCompleted: 2, missionsFirstTry: 1 },
+    signals: { commitDays: 27, missionsCompleted: 19, missionsFirstTry: 12 },
   },
   {
-    member: { role: 'Data Scientist', experience: 4 },
+    member: { role: 'ML Engineer', experience: 3 },
     missions: [
-      { day: 4, title: 'Day 4 - Data Cleaning', passed: true, attempts: 1 },
-      { day: 7, title: 'Day 7 - Statistics', passed: true, attempts: 1 },
-      { day: 11, title: 'Day 11 - Modeling', passed: true, attempts: 2 },
-      { day: 13, title: 'Day 13 - MLOps', passed: false, attempts: 3 },
-      { day: 16, title: 'Day 16 - Storytelling', skipped: true },
+      { day: 5, title: 'NumPy arrays', passed: true, attempts: 1 },
+      { day: 8, title: 'Visualization', passed: true, attempts: 1 },
+      { day: 13, title: 'Regression', passed: true, attempts: 2 },
+      { day: 15, title: 'Overfitting and regularization', passed: false, attempts: 4 },
+      { day: 20, title: 'Deep learning project', skipped: true },
+      { day: 25, title: 'NLP project', passed: true, attempts: 2 },
     ],
-    signals: { commitDays: 14, missionsCompleted: 4, missionsFirstTry: 3 },
+    signals: { commitDays: 18, missionsCompleted: 11, missionsFirstTry: 7 },
   },
 ]
 

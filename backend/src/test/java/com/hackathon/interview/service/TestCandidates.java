@@ -8,51 +8,56 @@ import com.hackathon.interview.model.CandidateSignals;
 import java.util.List;
 
 /**
- * Sample candidates mirroring the frontend's hardcoded pool (candidates.json
- * shape). Each encodes different weak-spot patterns for the selection logic.
+ * Sample candidates mirroring the frontend's hardcoded pool and
+ * {@code candidates.json} (member/missions/signals shape). Each encodes
+ * different weak-spot patterns for the selection logic. Mission days/titles
+ * reference the real AI Cohort curriculum (see TestCurriculum).
  */
 public final class TestCandidates {
 
     private TestCandidates() {
     }
 
-    /** AI Engineer: skipped Day 8, failed RAG (3 attempts), failed Fine-tuning (4 attempts). */
+    /** AI Engineer Trainee: skipped Probability (9) and Transformers (23), struggled on Pandas (6). */
     public static Candidate aiEngineer() {
         return new Candidate(
-                new CandidateMember("AI Engineer", 2),
+                new CandidateMember("AI Engineer Trainee", 1),
                 List.of(
-                        mission(2, "Day 2 - Prompting Basics", true, 1),
-                        mission(5, "Day 5 - RAG Fundamentals", false, 3),
-                        skipped(8, "Day 8 - Agents"),
-                        mission(12, "Day 12 - Evaluation", true, 1),
-                        mission(15, "Day 15 - Fine-tuning", false, 4)),
-                new CandidateSignals(10, 3, 2));
+                        mission(3, "Python data structures", true, 1),
+                        mission(6, "Pandas basics", false, 4),
+                        skipped(9, "Probability foundations"),
+                        mission(14, "Classification", true, 2),
+                        mission(18, "Backpropagation and training", true, 3),
+                        skipped(23, "Transformers and attention"),
+                        mission(27, "Prompt engineering", true, 1)),
+                new CandidateSignals(21, 15, 9));
     }
 
-    /** Web Developer: two skipped days (6, 14), one failed (9). */
+    /** ML Engineer: skipped Deep learning project (20), struggled on Overfitting (15). */
     public static Candidate webDeveloper() {
         return new Candidate(
-                new CandidateMember("Web Developer", 1),
+                new CandidateMember("ML Engineer", 3),
                 List.of(
-                        mission(1, "Day 1 - HTML & CSS", true, 1),
-                        mission(3, "Day 3 - JavaScript", true, 2),
-                        skipped(6, "Day 6 - Accessibility"),
-                        mission(9, "Day 9 - Performance", false, 3),
-                        skipped(14, "Day 14 - Testing")),
-                new CandidateSignals(6, 2, 1));
+                        mission(5, "NumPy arrays", true, 1),
+                        mission(8, "Visualization", true, 1),
+                        mission(13, "Regression", true, 2),
+                        mission(15, "Overfitting and regularization", false, 4),
+                        skipped(20, "Deep learning project"),
+                        mission(25, "NLP project", true, 2)),
+                new CandidateSignals(18, 11, 7));
     }
 
-    /** Data Scientist: skipped Day 16, failed MLOps (3 attempts). */
+    /** Data Analyst: skipped Building a neural network (19), struggled on Hypothesis testing (11). */
     public static Candidate dataScientist() {
         return new Candidate(
-                new CandidateMember("Data Scientist", 4),
+                new CandidateMember("Data Analyst", 2),
                 List.of(
-                        mission(4, "Day 4 - Data Cleaning", true, 1),
-                        mission(7, "Day 7 - Statistics", true, 1),
-                        mission(11, "Day 11 - Modeling", true, 2),
-                        mission(13, "Day 13 - MLOps", false, 3),
-                        skipped(16, "Day 16 - Storytelling")),
-                new CandidateSignals(14, 4, 3));
+                        mission(6, "Pandas basics", true, 1),
+                        mission(11, "Hypothesis testing", false, 5),
+                        mission(16, "ML model project", true, 2),
+                        skipped(19, "Building a neural network"),
+                        mission(24, "Working with LLMs", true, 2)),
+                new CandidateSignals(27, 19, 12));
     }
 
     /** No weak spots and only 2 missions — forces curriculum padding to reach 4 days. */
@@ -60,8 +65,8 @@ public final class TestCandidates {
         return new Candidate(
                 new CandidateMember("Junior Engineer", 0),
                 List.of(
-                        mission(2, "Day 2 - Prompting Basics", true, 1),
-                        mission(5, "Day 5 - RAG Fundamentals", true, 1)),
+                        mission(2, "Python basics", true, 1),
+                        mission(5, "NumPy arrays", true, 1)),
                 new CandidateSignals(3, 2, 2));
     }
 

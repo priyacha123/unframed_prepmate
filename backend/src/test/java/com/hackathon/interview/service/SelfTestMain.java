@@ -54,8 +54,8 @@ public final class SelfTestMain {
         InterviewEngine engine = new InterviewEngine(new FakeClaudeService(), TestCurriculum.all());
         List<Integer> days = engine.startInterview(TestCandidates.aiEngineer()).session().getTargetDays();
         check("targetDays >= 4", days.size() >= 4);
-        check("first target is a skipped weak spot (day 8)", days.get(0) == 8);
-        check("all weak days selected (8, 15, 5)", days.containsAll(List.of(8, 15, 5)));
+        check("first target is a skipped weak spot (day 9)", days.get(0) == 9);
+        check("all weak days selected (9, 23, 6)", days.containsAll(List.of(9, 23, 6)));
         check("no duplicate target days", days.size() == days.stream().distinct().count());
     }
 
@@ -81,8 +81,8 @@ public final class SelfTestMain {
         check("history holds one assistant message",
                 s.getHistory().size() == 1 && "assistant".equals(s.getHistory().get(0).role()));
         check("opening reply is non-blank", resp.reply() != null && !resp.reply().isBlank());
-        check("opening system prompt is grounded in day 8 (Agents)",
-                claude.systemPrompts.get(0).contains("Agents"));
+        check("opening system prompt is grounded in day 9 (Probability foundations)",
+                claude.systemPrompts.get(0).contains("Probability foundations"));
         check("opening system prompt surfaces the skip",
                 claude.systemPrompts.get(0).contains("skipped"));
         check("opening system prompt carries candidate background",

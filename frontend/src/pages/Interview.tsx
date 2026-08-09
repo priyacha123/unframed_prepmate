@@ -122,9 +122,13 @@ export default function Interview({ onExit, onDashboard }: InterviewProps) {
   const showChat =
     phase === 'chatting' || phase === 'sending' || phase === 'error'
   const questionsAsked = messages.filter((m) => m.role === 'assistant').length
+  // Mirrors the backend's CandidateMission.isWeak(): skipped, or
+  // attempts >= 3 and not passed. Keeps the UI "Probing next" list in sync
+  // with what the engine actually probes.
   const weakSpots = candidate?.missions.filter(
     (m) =>
-      ('skipped' in m && m.skipped) || ('attempts' in m && m.attempts >= 3),
+      ('skipped' in m && m.skipped) ||
+      ('attempts' in m && m.attempts >= 3 && m.passed === false),
   )
 
   return (

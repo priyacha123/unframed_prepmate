@@ -63,8 +63,8 @@ export default function Hero({ onStart }: { onStart: () => void }) {
                 Q.
               </p>
               <div className="border-l-2 border-rule-strong pl-3 text-ink">
-                I see you attempted the RAG fundamentals mission a few times.
-                Let&apos;s start there — walk me through a RAG pipeline.
+                I see you skipped the Probability foundations mission. Let&apos;s
+                start there — walk me through Bayes&apos; theorem.
               </div>
             </div>
             <div className="ml-auto max-w-[92%]">
@@ -72,8 +72,9 @@ export default function Hero({ onStart }: { onStart: () => void }) {
                 A.
               </p>
               <div className="bg-ink px-3 py-2.5 text-right text-paper-raised">
-                Sure — embed and index the docs, retrieve relevant chunks, pass
-                them to the model with the question.
+                Sure — it&apos;s about updating a belief as new evidence comes in:
+                the prior gets scaled by how likely the evidence is under each
+                hypothesis.
               </div>
             </div>
             <div className="max-w-[92%]">
@@ -81,7 +82,8 @@ export default function Hero({ onStart }: { onStart: () => void }) {
                 Q.
               </p>
               <div className="border-l-2 border-rule-strong pl-3 text-ink">
-                Good. Now, how would you choose a chunk size?
+                Good. Now, how would you apply conditional probability when
+                debugging a flaky model?
               </div>
             </div>
             <div className="ml-auto max-w-[92%]">

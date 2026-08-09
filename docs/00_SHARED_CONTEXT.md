@@ -22,6 +22,10 @@ adaptive follow-ups, structured feedback at the end.
   with raw HTTP (there's no official Anthropic Java SDK, so this is a plain
   REST call to `api.anthropic.com`). Use Haiku for interview turns, same/
   stronger model ok for feedback generation.
+  > **Implementation note (merged code):** the transport now calls the Google
+  > Gemini REST API (`generativelanguage.googleapis.com`) — the `ClaudeService`
+  > class keeps its legacy name for compatibility, and the env key is
+  > `GEMINI_API_KEY` (model `GEMINI_MODEL`, default `gemini-2.5-flash`).
 - Session storage: in-memory store — a `ConcurrentHashMap<String,
   InterviewSession>` wrapped in a `@Service` singleton bean. No database.
 - **Deployment: Render or Railway (a real running JVM process), NOT a

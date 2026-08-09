@@ -54,7 +54,7 @@ The final submission must be production-quality within hackathon scope and fully
 
 \## AI
 
-\- Anthropic Claude API
+\- Google Gemini API (free tier). The `ClaudeService` class keeps its legacy name, but the transport and env key are Gemini (`GEMINI_API_KEY`, model `GEMINI_MODEL`).
 
 \## Deployment
 
@@ -482,7 +482,9 @@ Do NOT
 
 \# Environment Variables
 
-ANTHROPIC\_API\_KEY
+GEMINI_API_KEY
+
+GEMINI_MODEL (optional, defaults to gemini-2.5-flash)
 
 PORT
 

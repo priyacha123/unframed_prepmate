@@ -2,7 +2,7 @@
   {
     "id": "cand-001",
     "name": "Aarav Sharma",
-    "member": { "role": "AI Engineer Trainee", "experience": "1 year" },
+    "member": { "role": "AI Engineer Trainee", "experience": 1 },
     "missions": [
       { "day": 3, "title": "Python data structures", "passed": true, "attempts": 1 },
       { "day": 6, "title": "Pandas basics", "passed": false, "attempts": 4 },
@@ -17,7 +17,7 @@
   {
     "id": "cand-002",
     "name": "Meera Iyer",
-    "member": { "role": "Data Analyst", "experience": "2 years" },
+    "member": { "role": "Data Analyst", "experience": 2 },
     "missions": [
       { "day": 6, "title": "Pandas basics", "passed": true, "attempts": 1 },
       { "day": 11, "title": "Hypothesis testing", "passed": false, "attempts": 5 },
@@ -26,5 +26,19 @@
       { "day": 24, "title": "Working with LLMs", "passed": true, "attempts": 2 }
     ],
     "signals": { "commitDays": 27, "missionsCompleted": 19, "missionsFirstTry": 12 }
+  },
+  {
+    "id": "cand-003",
+    "name": "Rohan Verma",
+    "member": { "role": "ML Engineer", "experience": 3 },
+    "missions": [
+      { "day": 5, "title": "NumPy arrays", "passed": true, "attempts": 1 },
+      { "day": 8, "title": "Visualization", "passed": true, "attempts": 1 },
+      { "day": 13, "title": "Regression", "passed": true, "attempts": 2 },
+      { "day": 15, "title": "Overfitting and regularization", "passed": false, "attempts": 4 },
+      { "day": 20, "title": "Deep learning project", "skipped": true },
+      { "day": 25, "title": "NLP project", "passed": true, "attempts": 2 }
+    ],
+    "signals": { "commitDays": 18, "missionsCompleted": 11, "missionsFirstTry": 7 }
   }
 ]

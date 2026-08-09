@@ -8,7 +8,7 @@ interface CandidatePickerProps {
 function weakSpots(candidate: Candidate) {
   const skipped = candidate.missions.filter((m) => 'skipped' in m).length
   const struggled = candidate.missions.filter(
-    (m) => 'attempts' in m && m.attempts >= 3,
+    (m) => 'attempts' in m && m.attempts >= 3 && m.passed === false,
   ).length
   return { skipped, struggled }
 }

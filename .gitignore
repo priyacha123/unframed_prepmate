@@ -34,8 +34,9 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files (real keys stay ignored; .example templates can be committed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -43,3 +44,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDE / editor (never commit local IDE state)
+.idea/
+*.iml
+.vscode/

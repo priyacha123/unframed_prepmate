@@ -8,26 +8,26 @@ const SESSIONS = [
   {
     id: '1',
     date: 'Aug 8, 2026',
-    role: 'AI Engineer',
+    role: 'AI Engineer Trainee',
     questions: 10,
     score: 74,
-    days: ['Day 5 · RAG', 'Day 8 · Agents'],
+    days: ['Day 9 · Probability foundations', 'Day 23 · Transformers'],
   },
   {
     id: '2',
     date: 'Aug 5, 2026',
-    role: 'Web Developer',
+    role: 'Data Analyst',
     questions: 9,
     score: 68,
-    days: ['Day 6 · Accessibility', 'Day 9 · Performance'],
+    days: ['Day 11 · Hypothesis testing', 'Day 19 · Neural networks'],
   },
   {
     id: '3',
     date: 'Jul 31, 2026',
-    role: 'Data Scientist',
+    role: 'ML Engineer',
     questions: 8,
     score: 81,
-    days: ['Day 13 · MLOps', 'Day 16 · Storytelling'],
+    days: ['Day 15 · Overfitting', 'Day 20 · Deep learning'],
   },
 ]
 
@@ -76,8 +76,9 @@ export default function Dashboard({ onExit, onStart }: DashboardProps) {
               Your practice, at a glance
             </h1>
             <p className="mt-4 max-w-xl leading-relaxed text-ink-muted">
-              Three sessions in. Your score is trending up, but RAG retrieval
-              keeps coming back as a gap — make it the focus of your next run.
+              Three sessions in. Your score is trending up, but probability
+              foundations keeps coming back as a gap — make it the focus of your
+              next run.
             </p>
           </div>
           <button
@@ -109,7 +110,7 @@ export default function Dashboard({ onExit, onStart }: DashboardProps) {
           </div>
           <div className="border-b border-rule px-6 py-7 sm:px-8 lg:border-b-0">
             <p className="font-display text-4xl font-medium tracking-tight text-ink">
-              RAG
+              Probability
             </p>
             <p className="mt-2 text-sm text-ink-muted">weakest area</p>
           </div>

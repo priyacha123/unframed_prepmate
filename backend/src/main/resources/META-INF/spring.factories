@@ -1,0 +1,4 @@
+# Loads backend/.env into the Spring environment (Spring Boot 3.3 loads
+# EnvironmentPostProcessor implementations from this file, not from .imports).
+org.springframework.boot.env.EnvironmentPostProcessor=\
+com.hackathon.interview.config.DotenvEnvironmentPostProcessor
